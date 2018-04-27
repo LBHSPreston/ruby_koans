@@ -36,12 +36,12 @@ def score(dice)
   dice.each do |roll|
     scores[roll] += 1
   end
-  scores.each do |score|
-    threeSet = score.value/3
-    remainder = score.value % 3
-    result += (100 * remainder) + (1000 * threeSet) if score.key == 1
-    result += (50 * remainer) + (500 * threeSet) if score.key == 5
-    result += (100 * score.key) if (score.key != 1 && score.key != 5 && score.value >= 3)
+  scores.each do |key,value|
+    threeSet = value/3
+    remainder = value % 3
+    result += (100 * remainder) + (1000 * threeSet) if key == 1
+    result += (50 * remainder) + (500 * threeSet) if key == 5
+    result += (100 * key) if (key != 1 && key != 5 && value >= 3)
   end
 
   result
