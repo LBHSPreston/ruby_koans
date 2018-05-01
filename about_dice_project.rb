@@ -6,7 +6,6 @@ class DiceSet
    attr_accessor :values
    def roll(num)
       @values = (0...num).to_a
-      puts @values.size
       @values.each do | aRoll |
         @values[aRoll] = rand(1..6)
       end
